@@ -16,3 +16,8 @@ phases:
       - echo Build completed on `date`
       - echo Pushing the Docker image...
       - docker push 231677629210.dkr.ecr.ap-south-1.amazonaws.com/cicd-app:latest
+      - echo Writing image definitions file...
+      - printf '[{"name":"cicd-container","imageUri":"%s"}]' "231677629210.dkr.ecr.ap-south-1.amazonaws.com/cicd-app:latest" > imagedefinitions.json
+
+artifacts:
+  files: imagedefinitions.json
