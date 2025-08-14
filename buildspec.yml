@@ -9,8 +9,8 @@ phases:
     commands:
       - echo Build started on `date`
       - echo Building the Docker image...
-      - docker build -t cicd-project .
-      - docker tag cicd-project:latest 231677629210.dkr.ecr.ap-south-1.amazonaws.com/cicd-project:latest
+      - docker build -t cicd-app .
+      - docker tag cicd-app:latest 231677629210.dkr.ecr.ap-south-1.amazonaws.com/cicd-project:latest
   post_build:
     commands:
       - echo Build completed on `date`
